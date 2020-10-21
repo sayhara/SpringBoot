@@ -1,6 +1,5 @@
 package com.qwon.springboot.web;
 
-import com.qwon.springboot.config.auth.LoginUser;
 import com.qwon.springboot.config.auth.dto.SessionUser;
 import com.qwon.springboot.service.posts.PostsService;
 import com.qwon.springboot.web.dto.PostsResponseDto;
@@ -20,7 +19,7 @@ public class IndexController {
     private final HttpSession httpSession;
 
     @GetMapping("/")
-    public String index(Model model,@LoginUser SessionUser user){
+    public String index(Model model, SessionUser user){
         model.addAttribute("posts",postsService.findAllDesc());
         if(user!=null){
             model.addAttribute("userName",user.getName());
