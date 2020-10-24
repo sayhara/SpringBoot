@@ -33,6 +33,17 @@ deploy:
     local_dir: deploy
     wait-until-deployed: true
 
+  - provider: codedeploy
+    access_key_id: AKIA4LQEBP33OOIG7O3W
+    secret_access_key: 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
+    bucket: freelec-springboot-buckets
+    key: freelec-springboot2-webservice.zip
+    bundle_type: zip
+    application: freelec-springboot2-webservice
+    deployment_group: freelec-springboot2-webservice-group
+    region: ap-northeast-2
+    wait-until-deployed: true
+
 # CI 실행 완료시 메일로 알람
 notifications:
   email:
